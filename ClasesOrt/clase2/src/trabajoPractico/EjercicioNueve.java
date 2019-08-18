@@ -15,7 +15,7 @@ public class EjercicioNueve {
 		double porcentaje;
 		double porcentaje2;
 		double porcentaje3;
-		
+		double totalAportado;
 		
 		System.out.println("ingrese su nombre");
 		nombre1=input.next();
@@ -33,8 +33,11 @@ public class EjercicioNueve {
 		porcentaje=(100*num1)/resultado;
 		porcentaje2=(100*num2)/resultado;
 		porcentaje3=(100*num3)/resultado;
-		System.out.println("su nombre es:    su capital es:    porcentaje aportado\n"+nombre1+"        "+num1+ "        "+porcentaje+" \n"  +nombre2+"        "+num2+"        "+porcentaje2+"\n"+nombre3+"        "+num3+"        "+porcentaje3);
-		System.out.println("");
+		totalAportado=num1+num2+num3;
+		System.out.println("Nombre "+nombre1+" Capital Aportado "+num1+" Porcentaje aportado "+porcentaje);
+		System.out.println("Nombre "+nombre2+" Capital Aportado "+num2+" Porcentaje aportado "+porcentaje2);
+		System.out.println("Nombre "+nombre3+" Capital Aportado "+num3+" Porcentaje aportado "+porcentaje3);
+		System.out.println("Total capital aportado "+totalAportado);
 		input.close();
 	}
 
