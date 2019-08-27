@@ -24,7 +24,7 @@ public class Ejercicio10 {
 			System.out.println("Esta Cerrado");
 		}
 			
-		
+		input.close();
 	}
 
 }
