@@ -9,7 +9,7 @@ public class Ejercicio10 {
 		final int HORA_CIERRE =18;
 		System.out.println("Ingresa la hora");
 		hora=input.nextInt();
-		//test git
+		//test git asdsad
 		while (hora>24 || hora<0)
 		{
 			System.out.println("ingrese una hora valida");
