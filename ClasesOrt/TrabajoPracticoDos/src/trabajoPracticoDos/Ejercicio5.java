@@ -18,7 +18,7 @@ public class Ejercicio5 {
 		double promedio;
 		do
 		{
-			System.out.println("Ingrese el numero del corredor si es cero se cancela");
+			System.out.println("Ingrese el numero del corredor si es cero se cancela ");
 			acumulador=input.nextInt();
 			if (!(acumulador==0))
 			{
