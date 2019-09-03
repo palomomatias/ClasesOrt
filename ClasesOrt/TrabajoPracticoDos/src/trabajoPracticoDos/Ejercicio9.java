@@ -4,26 +4,22 @@ public class Ejercicio9 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		String contraseñaYusuario[]={"matias","asd123"};
-		String usuario;
-		String contraseña;
-		int contador=0;
-		do
+		
+		int numeros[]=new int [10];
+		int suma=0;
+		for(int i=0;i<5;i++)
 		{
-			System.out.println("Ingrese su usuario");
-			usuario=input.next();
-			System.out.println("Ingrese su contraseña");
-			contraseña=input.next();
-			contador++;
-			
-		}while(!(usuario.equals(contraseñaYusuario[0])&&contraseña.equals(contraseñaYusuario[1]))&&contador<3);
-		if(contador==3)
-		{
-			System.out.println("SE HA BLOQUEADO LA CUENTA");
-		}
-		else
-		{
-			System.out.println("SE INGRESO CORRECTAMENTE");
+			System.out.println("ingrese el primer numero");
+			numeros[i]=input.nextInt();
+			suma=suma+numeros[i];
+			System.out.println("ingrese el segundo numero");
+			numeros[i]=input.nextInt();
+			suma=suma+numeros[i];
+			System.out.println("ingrese el segundo el tercer numero");
+			numeros[i]=input.nextInt();
+			suma=(suma+numeros[i])/3;
+		System.out.println("El promedio total es "+suma);
+		suma=0;
 		}
 		
 		

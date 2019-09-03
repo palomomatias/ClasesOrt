@@ -4,35 +4,41 @@ public class Ejercicio6 {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
-		int numA,numB;
-		int acumulador=0;
-		int contador;
-		System.out.println("ingrese el primer numero");
-		numA=input.nextInt();
-		System.out.println("ingrese el segundo numero");
-		numB=input.nextInt();
+		final int alumnos=10;
+		String nombre[]=new String[alumnos];
+		int promedio[]=new int[alumnos];
+		int mejorNota=0;
+		String nombreDeLaMejorNota = null;
 		
-		if(numA>=0&&numB>=0)
-			
+		for(int i=0;i<alumnos;i++)
 		{
-			acumulador=0;
-			if(numB!=0)
-			{
-				contador=1;
-				while(contador<=numA)
+			System.out.println("ingrese nombre del alumno");
+			nombre[i]=input.next();
+			do
 				{
-					acumulador=acumulador+numB;
-					contador++;
-					
+				System.out.println("ingrese su promedio");
+			promedio[i]=input.nextInt();
 				}
-			}
+			while(promedio[i]<0||promedio[i]>11);
 		}
-		else
+		mejorNota=promedio[0];//Ejecutar afuera del for si no te tira cualquier resultado
+		nombreDeLaMejorNota=nombre[0];//Ejecutar afuera del for si no te tira cualquier resultado
+		for (int i=0;i<promedio.length;i++)
 		{
-			System.out.println("error el numero tiene que ser mayores o igual a cero");
-		}
-		System.out.println("LA MULTIPLICACION DE: "+numA+" CON "+numB+" ES IGUAL A: "+acumulador);
 			
+			if(mejorNota<promedio[i])//para buscar el menor promedio solo invertir a mayor
+			{
+				
+				mejorNota=promedio[i];
+				nombreDeLaMejorNota=nombre[i];	
+			}
+			
+			
+		}
+			
+			System.out.println("El MEJOR PROMEDIO ES\n"+nombreDeLaMejorNota+" Con un promedio de: "+mejorNota);	
+		
+		
 		input.close();
 	}
 
