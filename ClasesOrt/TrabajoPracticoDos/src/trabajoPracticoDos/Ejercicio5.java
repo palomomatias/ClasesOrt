@@ -6,16 +6,22 @@ public class Ejercicio5 {
 		Scanner input=new Scanner(System.in);
 		int contador=0;
 		int num1;
+		float promedio=0;
+		int acumulador=0;
 		
-		do
+		while(promedio<21)
+		
 		{
-			System.out.println("ingrese promedio");
+			System.out.println("ingrese numero");
 			num1=input.nextInt();
 			contador++;
-		}while(num1<21);
-		
+			acumulador=acumulador+num1;
+			promedio=(float)acumulador/contador;
+			System.out.println("promedio es: "+promedio);
+		}
+		System.out.println("supero el promedio mayor a 20");
 
-			System.out.println(contador);
+			
 		input.close();
 	}
 
