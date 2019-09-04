@@ -21,6 +21,7 @@ public class Ejercicio12 {
 		while(menu!="f")
 		{
 			
+			
 			do {
 			System.out.println("\n\nQue OPERACION DESEA REALIZAR\n SUMAR (APRETE +)\n RESTAR (APRETE -)\n MULPLICAR (APRETE *)\n DIVIDIR (APRETE /)\n MODULO (%)\n SALIR (APRETE \"f\")");
 			opcion=input.next();
