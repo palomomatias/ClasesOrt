@@ -6,16 +6,16 @@ public class Ejercicio13 {
 
 	public static void main(String[] args) {
 	Scanner input= new Scanner(System.in);
-	int alumnos;
+	
 	String [] curso;
 	String auxMateria="";
 	int mayor[];
 	int taller=0;
 	int matematicas=0;
 	int fundamentos=0;
-	
 	int aux;
 	int opcion[];
+	int alumnos;
 	
 	System.out.println("ingrese la cantidad de alumnos");
 	alumnos=input.nextInt();
@@ -52,7 +52,7 @@ public class Ejercicio13 {
 			matematicas++;
 			curso[i]="MATEMATICAS";
 			break;	
-	}			
+						}			
 	}
 	mayor[0]=taller;
 	mayor[1]=fundamentos;
@@ -79,8 +79,7 @@ public class Ejercicio13 {
 	}
 	
 	
-		System.out.println("Hay que darle mas importancia a"+curso[0]);
-	
+		System.out.println("Hay que darle mas importancia a "+curso[0]);
 	
 	
 	input.close();
