@@ -8,12 +8,22 @@ public class Ejercicio13 {
 	Scanner input= new Scanner(System.in);
 	int alumnos;
 	String [] curso;
+	String auxMateria="";
+	int mayor[];
+	int taller=0;
+	int matematicas=0;
+	int fundamentos=0;
+	
+	int aux;
 	int opcion[];
-	int taller=0,fundamentos=0,matematicas=0;
+	
 	System.out.println("ingrese la cantidad de alumnos");
 	alumnos=input.nextInt();
 	curso = new String[alumnos];
 	opcion= new int[alumnos];
+	mayor=new int [alumnos];
+	
+	
 	for(int i=0;i<alumnos;i++)
 	{
 		do
@@ -30,22 +40,55 @@ public class Ejercicio13 {
 			}
 		while(!(opcion[i]>0&&opcion[i]<4));
 		switch(opcion[i]){
-			case 1:
-				taller++;
-				break;
-			case 2:
-				fundamentos++;
-				break;
-			case 3:
-				matematicas++;
-				break;	
+		case 1:
+			taller++;
+			curso[i]="TALLER";
+			break;
+		case 2:
+			fundamentos++;
+			curso[i]="FUNDAMENTOS";
+			break;
+		case 3:
+			matematicas++;
+			curso[i]="MATEMATICAS";
+			break;	
+	}			
+	}
+	mayor[0]=taller;
+	mayor[1]=fundamentos;
+	mayor[2]=matematicas;
+		
+	
+	for(int i=0;i<alumnos-1;i++)
+	{
+		for(int j = i+1;j<alumnos;j++)
+		{
+			if(mayor[i]>mayor[j])
+			{
+				aux=mayor[i];
+				mayor[i]=mayor[j];
+				mayor[j]=aux;
+				auxMateria=curso[i];
+				curso[i]=curso[j];
+				curso[j]=auxMateria;
+				
+				
+			}
+		
 		}
 	}
 	
+	
+		System.out.println("Hay que darle mas importancia a"+curso[0]);
 	
 	
 	
 	input.close();
 	}
 
-}
+	
+	
+	
+	}
+
+
