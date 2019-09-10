@@ -21,7 +21,7 @@ final static int precioBase=8500;
 	for(int i=0;i<cantidadPedida;i++)
 	{
 		System.out.println("ingrese el nombre de su impresa");
-		nombreEmpresa[i]=input.next();
+		nombreEmpresa[i]=input.nextLine();
 		do {
 		System.out.println("ingrese los viajes adicionales");
 		viajes[i]=input.nextInt();
