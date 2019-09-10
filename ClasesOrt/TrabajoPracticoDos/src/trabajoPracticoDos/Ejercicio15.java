@@ -7,26 +7,24 @@ public class Ejercicio15 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int codigoAux=1;
-		int contador=0;
-		int cliente[];
-		int duracionLlamada[];
-		float importe[];
-		String abono[];
+		int contador=100;
+		int i=0;
+		float importe[]= new float[contador];
+		String abono[]= new String [contador];
+		int duracionLlamada[]= new int [contador];
+		int cliente[]= new int [contador];
 		while(codigoAux!=0)
 		{
+			
+			
 		do{
 		System.out.println("INGRESE EL CODIGO DE CLIENTE");
 		codigoAux=input.nextInt();
 		}while((codigoAux<1001||codigoAux>9999)&&!(codigoAux==0));
-		contador++;
-		importe= new float[contador];
-		abono= new String [contador];
-		duracionLlamada= new int [contador];
-		cliente= new int [contador];
+		
 		if(codigoAux>0)
 		{
-			for(int i=0;i<contador;i++)
-			{
+			
 				cliente[i]=codigoAux;
 				do
 				{
@@ -70,17 +68,18 @@ public class Ejercicio15 {
 					}
 			
 			}
+		if(cliente[i]>0)
+		i++;
 		}
+		
+		for(int j=0;j<i;j++){
+		System.out.println(cliente[j]);
+		input.close();}
 		}
 
 			
 			
 			
-			System.out.println("aSDASDSA");
-			
-			
-		
-		input.close();
+
 	}
 
-}
