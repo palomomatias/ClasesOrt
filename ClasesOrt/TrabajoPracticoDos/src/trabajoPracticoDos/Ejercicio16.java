@@ -10,11 +10,20 @@ public static int contKosher=0;
 public static int contCeliaco=0;
 public static int contLight=0;
 public static int resultado=0;
-	public static void main(String[] args) {
+public static int acumClasico=0;
+public static int acumKosher=0;
+public static int acumLight=0;
+public static int acumCeliaco=0;
+
+
+public static void main(String[] args) {
 		
 		String menuDelSistema;
-		int totalPersonaMenu;
+		int totalPersonaMenu=0;
 		int restante;
+		int total=0;
+		int bebidas;
+		int comida=0;
 		menuDelSistema=ingresoDelSistema();
 		String menu;
 		if(menuDelSistema.contentEquals("s")) {
@@ -23,40 +32,71 @@ public static int resultado=0;
 			do
 				{
 				menu=pedirMenu();
+				if(!menu.contentEquals("fin")) {	
 				totalPersonaMenu=pedirInvitadosMenu(restante);
-				restante=restante-totalPersonaMenu;				
+				restante=restante-totalPersonaMenu;	
+				cuentaDeMenu(menu,totalPersonaMenu);
+				}
 				}
 			while(!menu.contentEquals("fin"));
-		
+			comida=costoDeComida();
+			bebidas=costoBebidas(cantidadDePersonas);
+			total=costoTotal(bebidas,comida);
+			System.out.println("usted ha invitado "+cantidadDePersonas+" personas");
+			System.out.println("Clasico "+contClasico+" 300");
+			System.out.println("Celiaco "+contCeliaco+" 310");
+			System.out.println("Kosher "+contKosher+" 430");
+			System.out.println("Light "+contLight+" 290");
+			System.out.println("El costo de la comida es "+comida);
+			System.out.println("El costo de las bebidas es "+bebidas);
+			System.out.println("El costo total es de "+total);
 		}
 		
+		
 	}
+public static int costoBebidas(int personas)
+{
+	int total;
+	total=personas*30;
+return total;
+}
 
-public static void cuentaDeMenu(String menu)
+public static int costoTotal(int bebidas,int comida)
+{
+int total;
+total=comida+bebidas;
+return total;
+
+}
+
+
+
+public static int costoDeComida()
+{
+	int total;
+	acumClasico=contClasico*300;
+	acumLight=contLight*290;
+	acumCeliaco=contCeliaco*310;
+	acumKosher=contKosher*460;
+	total=acumClasico+acumLight+acumCeliaco+acumKosher;
+	return total;
+}
+	
+public static void cuentaDeMenu(String menu,int totalPersonaMenu)
 {	
-	int personasQueElegieronMenu;
-	int aux;
-	do{System.out.println("ingrese la cantidad de personas que eligieron ese menu");
-	personasQueElegieronMenu=input.nextInt();
-	}
-	while(personasQueElegieronMenu>cantidadDePersonas);
-	resultado=cantidadDePersonas-personasQueElegieronMenu;
-	 
-		 
-		 
-		 
+	
 	switch (menu)
 	{
 	case "clasico":
-		contClasico++;
+		contClasico=totalPersonaMenu+contClasico;
 		break;
 	case "celiaco":
-		contCeliaco++;
+		contCeliaco=totalPersonaMenu+contCeliaco;
 		break;
 	case "kosher":
-		contKosher++;
+		contKosher=totalPersonaMenu+contKosher;
 	case "light":
-		contLight++;
+		contLight=totalPersonaMenu+contLight;
 		break;
 	}
 	
