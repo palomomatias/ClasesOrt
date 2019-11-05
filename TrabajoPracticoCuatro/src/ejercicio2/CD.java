@@ -15,7 +15,10 @@ public class CD {
 		return canciones;
 	}
 
-
+	@Override
+	public String toString() {
+		return "CD [canciones=" + canciones + ", contador=" + contador + "]";
+	}
 	public void setCanciones(ArrayList<Cancion> canciones) {
 		this.canciones = canciones;
 	}
@@ -44,10 +47,20 @@ public class CD {
 	}
 	public void dameCancion(int numero)
 	{
-		int indice;
-		System.out.println("ingrese el numero de la posicion indica");
-		numero=input.nextInt();
-		System.out.println(canciones.get(numero));
+		
+		System.out.println(canciones.get(numero-1).toString());
+	}
+	
+
+
+	public void grabarCanciones(int indice, Cancion cancion)
+	{
+		
+		canciones.add(indice, cancion);
+	}
+	public void eliminar(int indice)
+	{
+		canciones.remove(indice);
 	}
 
 }

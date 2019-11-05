@@ -15,6 +15,11 @@ public class Cancion {
 		
 		this.cancion = cancion;
 	}
+
+	@Override
+	public String toString() {
+		return  cancion ;
+	}
 	
 	
 }
