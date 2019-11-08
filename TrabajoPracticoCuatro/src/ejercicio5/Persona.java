@@ -39,7 +39,7 @@ public class Persona {
 	@Override
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", Apellido=" + Apellido + ", dni=" + dni + ", telefono=" + telefono
-				+ ", mail=" + mail + "]";
+				+ ", mail=" + mail + "\n";
 	}
 	public Persona(String nombre, String apellido, int dni, int telefono, String mail) {
 		super();

@@ -1,4 +1,4 @@
-package trabajoPracticoTres;
+package ejercicio1;
 
 public class Persona {
 

@@ -1,4 +1,4 @@
-package trabajoPracticoTres;
+package ejercicio2;
 
 public class TarjetaDeCredito {
 	private String numero;

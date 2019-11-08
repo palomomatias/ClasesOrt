@@ -6,11 +6,22 @@ public class Agenda {
 
 	private ArrayList <Persona>li_persona=new ArrayList<Persona>();
 	
-	private void agregar(Persona persona)
+	
+	public void agregar(Persona persona)
 	{
 		li_persona.add(persona);
 	}
-	private void eliminar(ArrayList<Persona> personas,int dni)
+	@Override
+	public String toString() {
+		return "Agenda [li_persona=" + li_persona + "]";
+	}
+	public ArrayList<Persona> getLi_persona() {
+		return li_persona;
+	}
+	public void setLi_persona(ArrayList<Persona> li_persona) {
+		this.li_persona = li_persona;
+	}
+	public void eliminar(ArrayList<Persona> personas,int dni)
 	{
 		for(int i=0;i<personas.size();i++)
 		{
@@ -20,13 +31,13 @@ public class Agenda {
 			}	
 		}
 	}
-	private void mostrarPorDni(ArrayList<Persona> personas,int dni)
+	public void mostrarPorDni(ArrayList<Persona> personas,int dni)
 	{
 		for(int i=0;i<personas.size();i++)
 		{
 			if(personas.get(i).getDni()==dni)
 			{
-				personas.get(i).toString();
+				System.out.println(li_persona.get(i).toString());
 			}	
 		}
 	}
