@@ -42,25 +42,24 @@ public class Hotel {
 			this.habitacionesDisponibles = habitacionesDisponibles;
 		}
 		
-		public boolean ocuparHabitaciones(int cantHabitaciones)
-		{
-			if(cantHabitaciones>this.getHabitacionesDisponibles())
-			{
+		public boolean ocuparHabitaciones(int solicitadas) {
+			if (solicitadas>this.getHabitacionesDisponibles()) {
 				return false;
-			}else
+			} else {
+				this.setHabitacionesDisponibles(this.getHabitacionesDisponibles()-solicitadas);
 				return true;
-			
-		}
-		public boolean desocuparHabitaciones(int cantHabitacionesADesocupar)
-		{
-			if(cantHabitacionesADesocupar<this.getHabitacionesDisponibles())
-			{
-				return false;
-			}else
-				return true;
-			
+			}
 		}
 		
+		public boolean desocuparHabitaciones(int desocupar) {
+			if (this.getHabitacionesDisponibles()+desocupar>this.getHabitacionesTotales()) {
+				return false;
+			} else {
+				this.setHabitacionesDisponibles(getHabitacionesDisponibles()+desocupar);
+				return true;
+			}
+		}
+
 		
 
 }
